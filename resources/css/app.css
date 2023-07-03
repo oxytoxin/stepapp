@@ -1,0 +1,10 @@
+@import '../../vendor/filament/forms/dist/module.esm.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import '../../node_modules/@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.filament-forms-field-wrapper-label span{
+    @apply text-primary;
+}
