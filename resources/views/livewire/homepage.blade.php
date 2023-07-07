@@ -25,13 +25,16 @@
                 </x-slot:trigger>
                 <div class="text-primary">
                     <h3>SEND US YOUR PROPOSAL</h3>
-                    <div class="mt-4">
+                    <form wire:submit.prevent="propose" @proposed.window="close" class="mt-4">
                         {{ $this->form }}
                         <div class="flex gap-4 mt-4">
-                            <button class="bg-primary text-white flex-1 py-2 rounded">Submit</button>
-                            <button class="bg-gray-300 text-white flex-1 py-2 rounded" @click="close">Cancel</button>
+                            <button wire:loading.disabled type="submit" class="bg-primary text-white flex items-center gap-2 justify-center flex-1 py-2 rounded">
+                                <x-ri-refresh-line wire:loading class="animate-spin w-4" />
+                                <span>Submit</span>
+                            </button>
+                            <button wire:loading.disabled class="bg-gray-300 text-white flex-1 py-2 rounded" @click="close">Cancel</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </x-filament-support::modal>
         </div>

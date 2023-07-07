@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
     {
         User::create([
             'name' => 'TBI Admin',
-            'email' => 'tbistepapp@sksu.edu.ph',
-            'password' => '12345678'
+            'email' => 'sksutbistepapp@gmail.com',
+            'password' => 'stepapp@123'
         ]);
 
         PageDetail::create([
