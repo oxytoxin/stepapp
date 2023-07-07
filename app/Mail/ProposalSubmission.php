@@ -51,9 +51,6 @@ class ProposalSubmission extends Mailable
      */
     public function attachments(): array
     {
-        return [
-            Attachment::fromPath($this->proposal->getFirstMedia('logo')->getPath()),
-            Attachment::fromPath($this->proposal->getFirstMedia('proposal')->getPath())
-        ];
+        return [];
     }
 }

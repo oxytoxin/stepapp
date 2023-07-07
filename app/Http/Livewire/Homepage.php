@@ -11,6 +11,7 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
+use Resend\Laravel\Facades\Resend;
 
 class Homepage extends Component implements HasForms
 {
@@ -66,7 +67,8 @@ class Homepage extends Component implements HasForms
         $p->addMedia(collect($this->data['proposal'])->first())->toMediaCollection('proposal');
 
         Mail::to('sksutbistepapp@gmail.com')->send(new ProposalSubmission($p));
-        $this->reset();
+        $this->data = [];
+        $this->form->fill();
         $this->dispatchBrowserEvent('proposed');
     }
 }
